@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").style.display = "none";
+      // Missing a delay or an alternative method to ensure the display is set to none before innerHTML is changed.      document.getElementById("myDiv").innerHTML = "This text replaces the previous text.";
+    }
+  </script>
+</body>
+</html>
